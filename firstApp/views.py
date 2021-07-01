@@ -2,7 +2,16 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.core.files.storage import FileSystemStorage
-
+import os
+import sys
+# sys.path
+# sys.path.append('Liptotxt/LipNet-master/evaluation/predict.py')
+# print(sys.path)
+#sys.path.append(os.path.abspath('../'))
+# from LipNet-master.evaluations.predict import test
+import sys
+sys.path.insert(1, "Video lip/Liptotxt/firstApp/LipNet-master/evaluation")
+from predict import test
 # from keras.models import load_model
 # from keras.preprocessing import image
 # import tensorflow as tf
@@ -31,14 +40,23 @@ def index(request):
     return render(request,'index.html',context)
 
 
+def predvideo(request):
+    
+    fileObj=request.FILES['filePath']
+    fs=FileSystemStorage()
+    filePathName=fs.save(fileObj.name,fileObj)
+    filePathName=fs.url(filePathName)
+    
+    
+    return render(request, 'index.html')
+
+
+
 
 # def predictImage(request):
 #     print (request)
 #     print (request.POST.dict())
-#     fileObj=request.FILES['filePath']
-#     fs=FileSystemStorage()
-#     filePathName=fs.save(fileObj.name,fileObj)
-#     filePathName=fs.url(filePathName)
+
 #     testimage='.'+filePathName
 #     img = image.load_img(testimage, target_size=(img_height, img_width))
 #     x = image.img_to_array(img)
