@@ -89,6 +89,7 @@ def predvideo(request):
 
     elif (filePathName[7:13] == 'bbir8p'): 
         context['t'] = 'bin blue in r eight please'
+        print("Test")
     
  
     # if filePathName[7:]
