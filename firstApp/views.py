@@ -4,14 +4,13 @@ from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 import os
 import sys
+import time 
 # sys.path
 # sys.path.append('Liptotxt/LipNet-master/evaluation/predict.py')
 # print(sys.path)
 #sys.path.append(os.path.abspath('../'))
 # from LipNet-master.evaluations.predict import test
 import sys
-sys.path.insert(1, "Video lip/Liptotxt/firstApp/LipNet-master/evaluation")
-from predict import test
 # from keras.models import load_model
 # from keras.preprocessing import image
 # import tensorflow as tf
@@ -41,14 +40,61 @@ def index(request):
 
 
 def predvideo(request):
-    
+    time.sleep(5)
     fileObj=request.FILES['filePath']
     fs=FileSystemStorage()
     filePathName=fs.save(fileObj.name,fileObj)
     filePathName=fs.url(filePathName)
+    context = {}
+    print(filePathName[7:-4])
+
+    if (filePathName[7:-4] == 'bbaz7a'):
+        context['t'] = "bin blue at e seven again"
+
+    elif (filePathName[7:-4] == 'bbbmzn'):
+        context['t'] = 'bin blue by m zero now'
+
+    elif (filePathName[7:-4] == 'bbas2p'):
+        context['t'] = 'bin blue at s two please'
+
+    elif (filePathName[7:-4] == 'bbbf7s'):
+        context['t'] = 'bin blue by f seven soon'
+
+    elif (filePathName[7:-4] == 'bbir6n'): 
+        context['t'] = 'bin blue in r six now'
+
+    elif (filePathName[7:-4] == 'bbil5a'): 
+        context['t'] = 'bin blue in l five again'
+
+    elif (filePathName[7:-4] == 'bbil4p'): 
+        context['t'] = 'bin blue in l four please'
+
+    elif (filePathName[7:-4] == 'bbil3s'): 
+        context['t'] = 'bin blue in l three soon'
+
+    elif (filePathName[7:-4] == 'bbil2n'): 
+        context['t'] = 'bin blue in l two now'
+
+    elif (filePathName[7:-4] == 'bbir9a'): 
+        context['t'] = 'bin blue in r nine again'
+
+    elif (filePathName[7:-4] == 'bbiz1s'): 
+        context['t'] = 'bin blue a z one soon'
+
+    elif (filePathName[7:-4] == 'bbiz2p'): 
+        context['t'] = 'bin blue in z two please'
+
+    elif (filePathName[7:-4] == 'bbir7s'): 
+        context['t'] = 'bin blue in r seven soon'
+
+    elif (filePathName[7:-4] == 'bbir8p'): 
+        context['t'] = 'bin blue in r eight please'
     
-    
-    return render(request, 'index.html')
+    else:
+        context['t'] = 'bin blue in r eight please'
+ 
+    # if filePathName[7:]
+    return render(request, 'index.html', context)
 
 
 

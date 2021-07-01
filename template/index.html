@@ -2,7 +2,7 @@
 
 {% block content%}
 
-    <h2>Uplaod Video for LIP to String Analysis</h2>
+    <h2>Upload Video for LIP to String Analysis</h2>
 
     
     <br>
@@ -10,16 +10,18 @@
     <form method="post" enctype="multipart/form-data" action="predvideo">
   
  {% csrf_token %}
- <div class="col-md-4 col-sm-4"><label for="fname">Upload Video File Here:</label> </div> <input name="filePath" type="file"><br><br>
- <br>
+ <div class="col-md-4 col-sm-4"><label for="fname">Upload Video File Here:</label> 
+ <input name="filePath" type="file"><br>
+ <input type="submit" value="Submit" >
+ <br><br>
+ </div>
 
  
- <input type="submit" value="Submit" ></div>
-
- <h2>The classification of the image is {{predictedLabel}}</h2>
- <img src={{filePathName}} alt='imagename'>
- {{filePathName}}
-
+ <h3>The Text identified from the lip moment is</h3> 
+ <br>
+        <h2>{{t}}</h2>
+ 
+ </div>
 </form>
 <br>
 
