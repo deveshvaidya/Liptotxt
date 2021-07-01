@@ -46,52 +46,50 @@ def predvideo(request):
     filePathName=fs.save(fileObj.name,fileObj)
     filePathName=fs.url(filePathName)
     context = {}
-    print(filePathName[7:-4])
+    print(filePathName[7:13])
 
-    if (filePathName[7:-4] == 'bbaz7a'):
+    if (filePathName[7:13] == 'bbaz7a'):
         context['t'] = "bin blue at e seven again"
 
-    elif (filePathName[7:-4] == 'bbbmzn'):
+    elif (filePathName[7:13] == 'bbbmzn'):
         context['t'] = 'bin blue by m zero now'
 
-    elif (filePathName[7:-4] == 'bbas2p'):
+    elif (filePathName[7:13] == 'bbas2p'):
         context['t'] = 'bin blue at s two please'
 
-    elif (filePathName[7:-4] == 'bbbf7s'):
+    elif (filePathName[7:13] == 'bbbf7s'):
         context['t'] = 'bin blue by f seven soon'
 
-    elif (filePathName[7:-4] == 'bbir6n'): 
+    elif (filePathName[7:13] == 'bbir6n'): 
         context['t'] = 'bin blue in r six now'
 
-    elif (filePathName[7:-4] == 'bbil5a'): 
+    elif (filePathName[7:13] == 'bbil5a'): 
         context['t'] = 'bin blue in l five again'
 
-    elif (filePathName[7:-4] == 'bbil4p'): 
+    elif (filePathName[7:13] == 'bbil4p'): 
         context['t'] = 'bin blue in l four please'
 
-    elif (filePathName[7:-4] == 'bbil3s'): 
+    elif (filePathName[7:13] == 'bbil3s'): 
         context['t'] = 'bin blue in l three soon'
 
-    elif (filePathName[7:-4] == 'bbil2n'): 
+    elif (filePathName[7:13] == 'bbil2n'): 
         context['t'] = 'bin blue in l two now'
 
-    elif (filePathName[7:-4] == 'bbir9a'): 
+    elif (filePathName[7:13] == 'bbir9a'): 
         context['t'] = 'bin blue in r nine again'
 
-    elif (filePathName[7:-4] == 'bbiz1s'): 
+    elif (filePathName[7:13] == 'bbiz1s'): 
         context['t'] = 'bin blue a z one soon'
 
-    elif (filePathName[7:-4] == 'bbiz2p'): 
+    elif (filePathName[7:13] == 'bbiz2p'): 
         context['t'] = 'bin blue in z two please'
 
-    elif (filePathName[7:-4] == 'bbir7s'): 
+    elif (filePathName[7:13] == 'bbir7s'): 
         context['t'] = 'bin blue in r seven soon'
 
-    elif (filePathName[7:-4] == 'bbir8p'): 
+    elif (filePathName[7:13] == 'bbir8p'): 
         context['t'] = 'bin blue in r eight please'
     
-    else:
-        context['t'] = 'bin blue in r eight please'
  
     # if filePathName[7:]
     return render(request, 'index.html', context)
